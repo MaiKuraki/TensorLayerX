@@ -125,7 +125,7 @@ class Module(T_Module):
     # TODO RNN enabled after repair
     __call__: Callable[..., Any] = _call_impl_tlx
 
-    def _named_members(self, get_members_fn, prefix='', recurse=True):
+    def _named_members(self, get_members_fn, prefix='', recurse=True, **kwargs):
         r"""Helper method for yielding various names + members of modules."""
         memo = set()
         modules = self.named_modules(prefix=prefix) if recurse else [(prefix, self)]
